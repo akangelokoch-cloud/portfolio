@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Extracts stills from every reel in "ak portfolio/" for the hero gallery wall
-# and writes ak/public/images/wall/wall.json.
+# Extracts stills from every reel in "../ak portfolio/" (next to the repo folder) for the hero
+# gallery wall and writes public/images/wall/wall.json.
 #
-#   ak/scripts/wall.sh            # all clips in "ak portfolio/"
+#   npm run wall
 #
 # Needs: ffmpeg, cwebp, jq
 # Originals are only ever read, never moved or modified.

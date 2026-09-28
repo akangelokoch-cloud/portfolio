@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Encodes the reels in "ak portfolio/" into web versions in ak/public/videos/
-# and writes ak/public/videos/manifest.json.
+# Encodes the reels in "../ak portfolio/" (next to the repo folder) into web versions in
+# public/videos/ and writes public/videos/manifest.json.
 #
-#   ak/scripts/encode.sh            # encode new/changed clips only
-#   FORCE=1 ak/scripts/encode.sh    # re-encode everything
+#   npm run encode            # encode new/changed clips only
+#   FORCE=1 npm run encode    # re-encode everything
 #
 # Needs: ffmpeg (libx264, libvpx-vp9), ffprobe, cwebp, jq
 # Originals are only ever read, never moved or modified.

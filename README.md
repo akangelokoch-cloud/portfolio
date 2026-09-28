@@ -4,8 +4,27 @@ Personal portfolio for Angelo Koch — 3D interior & product visualisation, Zür
 Static site: Vite (vanilla JS), GSAP + ScrollTrigger + SplitText, Lenis. No framework, no backend,
 no cookies, no trackers, no external requests at runtime (fonts are self-hosted).
 
-Completely independent from the ankstudios.ch site in the repo root: own `package.json`,
-own `node_modules`, own build output (`ak/dist/`).
+Coding agents: read [`AGENTS.md`](AGENTS.md) first.
+
+## Quick start
+
+```sh
+git clone https://github.com/akangelokoch-cloud/portfolio.git
+cd portfolio
+npm install
+npm run dev            # http://localhost:5173
+```
+
+## Collaboration workflow
+
+1. `git pull` before starting.
+2. Make changes and check them in `npm run dev` (desktop and a phone-sized window, EN and DE).
+3. `npm run build` must succeed.
+4. Commit and `git push` to `main`.
+5. Angelo pulls, runs `npm run build` and uploads the contents of `dist/` by FTP (see Deploy).
+
+Editing copy, layout, styles and clip titles/order only needs Node. Adding new video clips needs the
+original reels and ffmpeg (steps 1–3b below), which only happens on Angelo's machine.
 
 ## Requirements
 
@@ -15,11 +34,12 @@ own `node_modules`, own build output (`ak/dist/`).
 
 ## Workflow: add clips → encode → confirm → build → deploy
 
-All commands run from the `ak/` folder.
+All commands run from the repo root.
 
 ### 1. Add clips
 
-Drop the original 9:16 reels into **`ak portfolio/`** at the repo root. These files are treated as
+Drop the original 9:16 reels into a folder named **`ak portfolio/`** placed *next to* the repo folder
+(a sibling, not inside it, so the large originals are never committed). These files are treated as
 read-only originals: the scripts only read them and never move, rename or modify them.
 
 ### 2. Register them in `scripts/clips.conf`
@@ -76,7 +96,7 @@ npm run dev            # http://localhost:5173 (also on your LAN IP, for testing
 ### 5. Build
 
 ```sh
-npm run build          # → ak/dist/
+npm run build          # → dist/
 npm run preview        # serve the production build locally
 ```
 
@@ -90,9 +110,9 @@ The originals in `ak portfolio/` are not needed on the server and shouldn't be c
 
 #### Option A: Vercel + DNS
 
-1. Push the repo to GitHub/GitLab (with `ak/public/videos/` committed).
-2. In Vercel, **Add New → Project**, import the repo, and set **Root Directory = `ak`**.
-   The framework, build command and output directory come from `ak/vercel.json`
+1. `public/videos/` is committed, so the repo is deployable as is.
+2. In Vercel, **Add New → Project** and import the repo (Root Directory stays the repo root).
+   The framework, build command and output directory come from `vercel.json`
    (Vite, `npm run build`, `dist`).
 3. **Settings → Domains**: add `angelokoch.ch` and `www.angelokoch.ch`, and set `www` to redirect to the apex.
 4. At the domain registrar (DNS for angelokoch.ch):
@@ -103,7 +123,7 @@ The originals in `ak portfolio/` are not needed on the server and shouldn't be c
 #### Option B: plain FTP (any static host, e.g. Apache)
 
 1. `npm run build`
-2. Upload the **contents** of `ak/dist/` (including the hidden `.htaccess`) to the web root of
+2. Upload the **contents** of `dist/` (including the hidden `.htaccess`) to the web root of
    angelokoch.ch.
 3. `.htaccess` handles HTTPS / no-www redirects, MIME types (`.webm`, `.webp`, `.woff2`) and caching.
    The server must support HTTP range requests for video (Apache does by default).
@@ -138,7 +158,8 @@ All strings live in `src/i18n.json`.
 ## Structure
 
 ```
-ak/
+portfolio/
+  AGENTS.md             rules for coding agents
   index.html            page shell ({{t:key}} and <!--@…--> placeholders are filled at build)
   vite.config.js        build + the plugin that renders sections from manifest.json / i18n.json
   vercel.json
