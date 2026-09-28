@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "interior",
+    "source": "interior.mp4",
+    "category": "atmospheric",
+    "order": 1,
+    "duration": 10,
+    "title": {
+      "en": "Glass Block Lounge",
+      "de": "Glasbaustein-Lounge"
+    },
+    "files": {
+      "play": "interior.play.mp4",
+      "playWebm": "interior.play.webm",
+      "mobilePlay": "interior.mobile.play.mp4",
+      "poster": "interior.poster.webp",
+      "mobilePoster": "interior.mobile.poster.webp"
+    }
+  },
+  {
+    "slug": "minimal",
+    "source": "minimal.mp4",
+    "category": "atmospheric",
+    "order": 2,
+    "duration": 10,
+    "title": {
+      "en": "Colonnade",
+      "de": "Kolonnade"
+    },
+    "files": {
+      "play": "minimal.play.mp4",
+      "playWebm": "minimal.play.webm",
+      "mobilePlay": "minimal.mobile.play.mp4",
+      "poster": "minimal.poster.webp",
+      "mobilePoster": "minimal.mobile.poster.webp"
+    }
+  },
+  {
+    "slug": "usm",
+    "source": "usm.mp4",
+    "category": "product",
+    "order": 3,
+    "duration": 10,
+    "title": {
+      "en": "USM Haller",
+      "de": "USM Haller"
+    },
+    "files": {
+      "play": "usm.play.mp4",
+      "playWebm": "usm.play.webm",
+      "mobilePlay": "usm.mobile.play.mp4",
+      "poster": "usm.poster.webp",
+      "mobilePoster": "usm.mobile.poster.webp"
+    }
+  },
+  {
+    "slug": "panton",
+    "source": "panton.mp4",
+    "category": "passion",
+    "order": 4,
+    "duration": 10,
+    "title": {
+      "en": "Panton Pool",
+      "de": "Panton-Pool"
+    },
+    "files": {
+      "play": "panton.play.mp4",
+      "playWebm": "panton.play.webm",
+      "mobilePlay": "panton.mobile.play.mp4",
+      "poster": "panton.poster.webp",
+      "mobilePoster": "panton.mobile.poster.webp"
+    }
+  }
+]

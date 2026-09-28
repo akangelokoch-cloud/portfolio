@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Angelo Koch — 3D Generalist</title>
+    <meta name="description" content="{{t:metaDescription}}" />
+    <meta name="theme-color" content="#120D0B" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://angelokoch.ch/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://angelokoch.ch/" />
+    <meta property="og:site_name" content="Angelo Koch" />
+    <meta property="og:title" content="Angelo Koch — 3D Generalist" />
+    <meta property="og:description" content="{{t:heroRole}}. {{t:heroTagline}}" />
+    <meta property="og:image" content="https://angelokoch.ch/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Angelo Koch — 3D Generalist" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="de_CH" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Angelo Koch — 3D Generalist" />
+    <meta name="twitter:description" content="{{t:heroRole}}. {{t:heroTagline}}" />
+    <meta name="twitter:image" content="https://angelokoch.ch/og-image.jpg" />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <link rel="preload" href="fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/inter-tight-var.woff2" as="font" type="font/woff2" crossorigin />
+    <!--@preload-portrait-->
+
+    <script>
+      // Runs before first paint: mark JS + motion preference so CSS can hide reveal targets without a flash.
+      document.documentElement.classList.add('js')
+    </script>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip">{{t:skip}}</a>
+
+    <div class="loader" data-loader role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="{{t:loading}}">
+      <span class="loader__num"><span data-loader-num>0</span><span class="loader__pct">%</span></span>
+    </div>
+
+    <header class="nav">
+      <nav class="nav__pill glass" data-glass aria-label="Angelo Koch">
+        <a class="nav__mono" href="#top" data-i18n-aria="navHome" aria-label="{{t:navHome}}">
+          <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#mono" /></svg>
+        </a>
+        <div class="lang" role="group" data-i18n-aria="langLabel" aria-label="{{t:langLabel}}">
+          <button type="button" class="lang__btn" data-lang="en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" class="lang__btn" data-lang="de" aria-pressed="false" lang="de">DE</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" data-accent="#E8561B" data-accent2="#6B44E8" aria-labelledby="hero-title">
+        <!--@hero-wall-->
+        <div class="glow" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <p class="hero__eyebrow" data-hero-in>
+            <span class="hero__dot" aria-hidden="true"></span>
+            <span data-i18n="heroEyebrow">{{t:heroEyebrow}}</span>
+          </p>
+          <div class="hero__stage">
+            <figure class="hero__portrait glass" data-glass data-tilt>
+              <div class="hero__photo">
+                <picture>
+                  <source media="(max-width: 767px)" srcset="images/ak.mobile.webp" type="image/webp" />
+                  <img src="images/ak.webp" alt="{{t:portraitAlt}}" data-i18n-alt="portraitAlt" width="1200" height="1064" fetchpriority="high" decoding="async" />
+                </picture>
+              </div>
+            </figure>
+            <h1 id="hero-title" class="hero__name">
+              <span class="hero__word hero__word--first"><span>Angelo</span></span>
+              <span class="hero__word hero__word--last"><span>Koch</span></span>
+            </h1>
+          </div>
+          <p class="hero__role" data-i18n="heroRole" data-reveal="hero">{{t:heroRole}}</p>
+          <p class="hero__tagline" data-i18n="heroTagline" data-reveal="hero">{{t:heroTagline}}</p>
+          <ul class="skills" role="list" data-hero-in data-i18n-aria="skillsLabel" aria-label="{{t:skillsLabel}}">
+            <li>Blender</li>
+            <li>Figma</li>
+            <li data-i18n="skillInterior">{{t:skillInterior}}</li>
+          </ul>
+          <div class="hero__actions" data-hero-in>
+            <a class="btn glass" data-glass href="#contact">
+              <span data-i18n="heroCta">{{t:heroCta}}</span>
+              <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <a class="scroll-hint" href="#main-work" data-hero-in>
+          <span data-i18n="scrollHint">{{t:scrollHint}}</span>
+          <span class="scroll-hint__line" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      <div id="main-work">
+        <!--@stages-->
+      </div>
+
+      <section class="contact" id="contact" data-accent="#E8561B" data-accent2="#B8237A" aria-labelledby="contact-title">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="contact__grid">
+          <figure class="portrait">
+            <picture>
+              <source media="(max-width: 767px)" srcset="images/ak-fun.mobile.webp" type="image/webp" />
+              <img src="images/ak-fun.webp" alt="{{t:portraitAlt}}" data-i18n-alt="portraitAlt" width="1200" height="1064" loading="lazy" decoding="async" />
+            </picture>
+          </figure>
+          <div class="contact__card glass" data-glass>
+            <h2 id="contact-title" class="contact__title" data-i18n="contactTitle" data-reveal>{{t:contactTitle}}</h2>
+            <a class="btn glass" data-glass href="https://www.youtube.com/watch?v=Aq5WXmQQooo" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="hireMe">{{t:hireMe}}</span><span class="sr-only" data-i18n="newTab">{{t:newTab}}</span>
+              <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="contact__mail" href="mailto:angelo.koch@ankstudios.ch">angelo.koch@ankstudios.ch</a>
+            <ul class="social" role="list">
+              <li><a href="https://www.instagram.com/ange1o_/" target="_blank" rel="noopener noreferrer">Instagram<span class="ext" aria-hidden="true">↗</span><span class="sr-only" data-i18n="newTab">{{t:newTab}}</span></a></li>
+              <li><a href="https://www.linkedin.com/in/angelo-koch-1a5822215/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="ext" aria-hidden="true">↗</span><span class="sr-only" data-i18n="newTab">{{t:newTab}}</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="b2b">
+          <span data-i18n="b2b">{{t:b2b}}</span>
+          <a href="https://ankstudios.ch" target="_blank" rel="noopener">ANK Studios<span class="ext" aria-hidden="true">↗</span><span class="sr-only" data-i18n="newTab">{{t:newTab}}</span></a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <ul class="footer__list" role="list">
+        <li data-i18n="footer">{{t:footer}}</li>
+        <li data-i18n="hostedBy">{{t:hostedBy}}</li>
+        <li data-i18n="sponsoredBy">{{t:sponsoredBy}}</li>
+      </ul>
+    </footer>
+
+    <div class="grain" aria-hidden="true"></div>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <symbol id="mono" viewBox="0 0 100 100">
+          <path fill="currentColor" transform="translate(20.4 72.6) scale(.62)" d="M13.70 0L-0.30 0Q-1.80 0-1.80-1Q-1.80-2-0.40-2.30L1.10-2.60Q3.10-3 4.10-4.55Q5.10-6.10 5.800-8.90L21.30-71.40Q21.50-72.40 21.95-72.70Q22.40-73 22.80-73Q23.30-73 23.75-72.70Q24.20-72.40 24.40-71.40L40.20-8Q40.90-5.20 41.80-4.10Q42.70-3 44.60-2.60L46.10-2.30Q47.50-2 47.50-1Q47.50 0 46 0L28.90 0Q27.50 0 27.50-1.10Q27.50-2.20 29.20-2.30L31.10-2.50Q32.80-2.70 33.25-3.60Q33.70-4.50 33.20-6.70L29.40-22.20Q28.80-24.80 26.10-24.80L15.60-24.800Q13-24.80 12.30-22.20L8.90-8.80Q7.40-3.10 11.90-2.50L13.40-2.30Q15.10-2 15.10-1.10Q15.10 0 13.70 0ZM15.30-27.80L26.30-27.80Q27.90-27.80 27.60-29.50L21.20-56.30L20.70-56.30L14-29.50Q13.70-27.80 15.30-27.80ZM66.40 0L48.10 0Q46.60 0 46.60-1.10Q46.60-2 47.90-2.30L50.20-2.70Q52.30-3.10 52.95-3.80Q53.60-4.50 53.60-6.60L53.60-65.40Q53.60-67.50 52.95-68.20Q52.30-68.90 50.20-69.30L47.90-69.70Q46.60-70 46.60-70.90Q46.60-72 48.10-72L66.40-72Q67.90-72 67.90-70.80Q67.90-69.90 66.80-69.70L64.10-69.30Q62-69 61.35-68.20Q60.70-67.40 60.70-65.30L60.70-38.30Q60.70-37.30 61.30-37.10Q61.90-36.90 62.40-37.80L78.80-63.50Q82.10-68.60 78.20-69.30L75.90-69.70Q74.60-70 74.60-71Q74.60-72 76-72L93-72Q94.40-72 94.40-70.90Q94.40-69.80 93.10-69.70L91.20-69.50Q88.10-69.20 86.10-67.70Q84.10-66.20 81.60-62.30L70.30-44.60Q69.30-42.90 70.20-41.30L89-5.90Q89.80-4.30 90.65-3.600Q91.50-2.90 92.70-2.70L95.10-2.30Q96.30-2.20 96.30-1.10Q96.30 0 94.90 0L77.10 0Q75.70 0 75.70-1.10Q75.70-2.10 77-2.30L78.70-2.50Q82.60-3 80.30-7.40L65.90-34.80Q65.50-35.60 65-35.65Q64.50-35.70 64-34.90L61.90-31.60Q61.20-30.60 60.95-29.70Q60.70-28.80 60.70-27.40L60.70-6.70Q60.70-4.60 61.35-3.80Q62-3 64.10-2.70L66.80-2.30Q67.90-2.10 67.90-1.20Q67.90 0 66.40 0Z"/>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
