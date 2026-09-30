@@ -7,7 +7,7 @@
     "duration": 10,
     "title": {
       "en": "Glass Block Lounge",
-      "de": "Glasbaustein-Lounge"
+      "de": "Glass Block Lounge"
     },
     "files": {
       "play": "interior.play.mp4",
@@ -24,8 +24,8 @@
     "order": 2,
     "duration": 10,
     "title": {
-      "en": "Colonnade",
-      "de": "Kolonnade"
+      "en": "Minimal Room",
+      "de": "Minimal Room"
     },
     "files": {
       "play": "minimal.play.mp4",
@@ -61,7 +61,7 @@
     "duration": 10,
     "title": {
       "en": "Panton Pool",
-      "de": "Panton-Pool"
+      "de": "Panton Pool"
     },
     "files": {
       "play": "panton.play.mp4",

@@ -2,7 +2,7 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
-import { setTextHandler } from './i18n.js'
+import { setText, setTextHandler } from './i18n.js'
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -35,7 +35,7 @@ function swapText(el, text, instant) {
   const item = items.get(el)
   if (!item || reduced || instant) {
     if (item?.split) item.split.revert()
-    el.textContent = text
+    setText(el, text)
     if (item && !reduced) split(item)
     return
   }
@@ -45,7 +45,7 @@ function swapText(el, text, instant) {
     ease: 'power1.in',
     onComplete() {
       item.split.revert()
-      el.textContent = text
+      setText(el, text)
       split(item)
       gsap.to(el, { autoAlpha: 1, duration: 0.35, ease: 'power1.out' })
       clearTimeout(refreshTimer)

@@ -98,6 +98,8 @@ export function initHero({ reducedMotion, pointer }) {
   gsap.set(photo, { clipPath: 'inset(50% 0% 50% 0% round 28px)' })
   gsap.set(photo.querySelector('img'), { scale: 1.25 })
   gsap.set(portrait, { autoAlpha: 0 })
+  const words = hero.querySelectorAll('.hero__word')
+  words.forEach((w) => w.classList.add('is-clipped'))
   gsap.set(first, { xPercent: 105 })
   gsap.set(last, { xPercent: -105 })
   gsap.set(fadeIns, { autoAlpha: 0, y: 16 })
@@ -135,6 +137,10 @@ export function initHero({ reducedMotion, pointer }) {
       .to(portrait, { autoAlpha: 1, duration: 0.6, ease: 'power1.out' }, 0.1)
       .to(photo, { clipPath: 'inset(0% 0% 0% 0% round 28px)', duration: 1.5 }, 0.1)
       .to(photo.querySelector('img'), { scale: 1, duration: 2.2 }, 0.1)
-      .to([first, last], { xPercent: 0, duration: 1.5 }, 0.55)
+      .to(
+        [first, last],
+        { xPercent: 0, duration: 1.5, onComplete: () => words.forEach((w) => w.classList.remove('is-clipped')) },
+        0.55,
+      )
       .to(fadeIns, { autoAlpha: 1, y: 0, duration: 1.1, stagger: 0.12, ease: 'power3.out' }, 1)
 }

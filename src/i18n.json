@@ -13,11 +13,11 @@
     "skillInterior": "Interior Design",
     "scrollHint": "Scroll down to explore my work",
     "atmosphericTitle": "Atmospheric Visuals",
-    "atmosphericText": "Interiors with a distinct mood — spaces that feel lived-in and stay with you.",
+    "atmosphericText": "Custom-crafted interior imagery with a strong focus on atmosphere, material and light.\n\nRather than producing generic CAD-style visualisations, I aim to create spaces with a distinct mood and identity — environments that feel lived-in, intentional and memorable, and that stay with you.",
     "productTitle": "Product Visuals",
-    "productText": "One piece, centre stage. Light and material that show it from its strongest angle.",
+    "productText": "Product-focused imagery that puts a single piece centre stage — details that could otherwise get lost within a full interior.\n\nThrough lighting, composition and carefully built materials, I create visuals that show a product from its strongest angle and communicate its character clearly, whether for campaigns, launches or brand communication.",
     "passionTitle": "Passion Projects",
-    "passionText": "No limits. Inspired by Verner Panton's colour and immersive interiors.",
+    "passionText": "No limits here. These are the projects where I zoom out — or zoom deep into myself — letting the art and possibilities of a space fully evolve, sometimes pushing into places that not everyone expects. Maybe not for everyone, but in 3D and interior design there are no boundaries, and for me, this is the perfect playground.\n\nA recurring influence for my passion projects is Verner Panton and his approach to colour, atmosphere and breathtaking interiors.",
     "clipAlt": "3D render by Angelo Koch: {title}",
     "portraitAlt": "Portrait of Angelo Koch",
     "contactTitle": "Let's create spaces.",
@@ -25,8 +25,7 @@
     "b2b": "Brand or agency project? Work with my studio.",
     "newTab": "opens in a new tab",
     "footer": "© 2026 Angelo Koch",
-    "hostedBy": "Hosted by Add Use",
-    "sponsoredBy": "Sponsored by Fynn Krüger"
+    "hostedBy": "Hosted by Add Use"
   },
   "de": {
     "metaDescription": "Angelo Koch — 3D Generalist in Zürich. Interior-, Produkt- und Motion-Visualisierung: Räume mit Stimmung, Material und Licht.",
@@ -42,11 +41,11 @@
     "skillInterior": "Interior Design",
     "scrollHint": "Scrolle nach unten und entdecke meine Arbeiten",
     "atmosphericTitle": "Atmosphärische Visuals",
-    "atmosphericText": "Interiors mit eigener Stimmung — Räume, die bewohnt wirken und bleiben.",
+    "atmosphericText": "Individuell gestaltete Interior-Visualisierungen mit einem besonderen Fokus auf Atmosphäre, Materialien und Licht.\n\nAnstatt generische Visualisierungen im typischen CAD-Stil zu erstellen, liegt mein Anspruch darin, Räume mit einer eigenen Stimmung und Identität zu schaffen. Umgebungen, die lebendig, bewusst gestaltet und einprägsam wirken und nachhaltig in Erinnerung bleiben.",
     "productTitle": "Produkt-Visuals",
-    "productText": "Ein Objekt im Mittelpunkt. Licht und Material zeigen es von seiner stärksten Seite.",
+    "productText": "Produktfokussierte Visualisierungen, die ein einzelnes Objekt gezielt in den Mittelpunkt rücken, mit Fokus auf Details, die in einer vollständigen Interior-Szene leicht untergehen können.\n\nDurch gezielte Lichtsetzung, Komposition und sorgfältig ausgearbeitete Materialien entstehen Visuals, die ein Produkt von seiner stärksten Seite zeigen und seinen Charakter klar vermitteln, ob für Kampagnen, Produkteinführungen oder Markenkommunikation.",
     "passionTitle": "Passion Projects",
-    "passionText": "Keine Grenzen. Inspiriert von Verner Pantons Farben und immersiven Räumen.",
+    "passionText": "Passion Projects geben mir die Möglichkeit, weiterzuforschen: tiefer zu gehen, heran- oder herauszuzoomen und die gestalterischen Möglichkeiten eines Raumes völlig frei zu erkunden. Dabei gehe ich bewusst auch in Richtungen, die vielleicht nicht jeder erwarten würde.\nVielleicht nicht für jeden – aber in 3D und Interior Design gibt es für mich keine Grenzen. Genau das macht diesen Bereich zu meinem perfekten kreativen Spielplatz.\n\nEine wiederkehrende Inspirationsquelle für meine Passion Projects ist Verner Panton und sein einzigartiger Umgang mit Farbe, Atmosphäre und unglaublichen Raumwelten.",
     "clipAlt": "3D-Rendering von Angelo Koch: {title}",
     "portraitAlt": "Porträt von Angelo Koch",
     "contactTitle": "Lass uns Räume erschaffen.",
@@ -54,7 +53,6 @@
     "b2b": "Projekt für eine Marke oder Agentur? Arbeite mit meinem Studio.",
     "newTab": "öffnet in neuem Tab",
     "footer": "© 2026 Angelo Koch",
-    "hostedBy": "Gehostet von Add Use",
-    "sponsoredBy": "Gesponsert von Fynn Krüger"
+    "hostedBy": "Gehostet von Add Use"
   }
 }

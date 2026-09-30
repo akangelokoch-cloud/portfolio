@@ -5,12 +5,12 @@ import { defineConfig } from 'vite'
 
 const root = dirname(fileURLToPath(import.meta.url))
 
-// Section order, accent colours (sampled from the clips) and which side the phone sits on.
+// Section order, accent colours and which side the phone sits on.
 // A section without clips in the manifest is not rendered.
 const SECTIONS = [
-  { key: 'atmospheric', accent: '#D9913F' },
-  { key: 'product', accent: '#C4322B' },
-  { key: 'passion', accent: '#B8237A', accent2: '#6B44E8' },
+  { key: 'atmospheric', accent: '#0B4427' },
+  { key: 'product', accent: '#0B4427' },
+  { key: 'passion', accent: '#371F7C' },
 ]
 
 const esc = (s) =>
@@ -64,7 +64,7 @@ function renderStages({ manifest, en }) {
           <div class="stage__card">
             <span class="stage__num" aria-hidden="true">${pad(n)}</span>
             <h2 id="${s.key}-title" class="stage__title" data-i18n="${s.key}Title" data-reveal>${esc(en[s.key + 'Title'])}</h2>
-            <p class="stage__copy" data-i18n="${s.key}Text" data-reveal>${esc(en[s.key + 'Text'])}</p>
+            <p class="stage__copy" data-i18n="${s.key}Text" data-reveal>${esc(en[s.key + 'Text']).replaceAll('\n', '<br>')}</p>
           </div>
           <p class="caption glass" data-glass>
             <span class="caption__index" data-clip-index>01 / ${pad(clips.length)}</span>

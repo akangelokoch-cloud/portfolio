@@ -3,9 +3,13 @@ import strings from '../i18n.json'
 const STORAGE_KEY = 'ak-lang'
 let lang = 'en'
 const listeners = new Set()
-let textHandler = (el, text) => {
-  el.textContent = text
+// Renders "\n" in a string as <br>, so copy can have line and paragraph breaks.
+export function setText(el, text) {
+  el.replaceChildren(
+    ...text.split('\n').flatMap((part, i) => (i ? [document.createElement('br'), part] : [part])),
+  )
 }
+let textHandler = (el, text) => setText(el, text)
 
 export const getLang = () => lang
 export const t = (key) => strings[lang]?.[key] ?? strings.en[key] ?? ''
@@ -21,7 +25,7 @@ function apply(instant) {
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const text = t(el.dataset.i18n)
-    if (el.textContent !== text) textHandler(el, text, instant)
+    if (el.textContent !== text.replaceAll('\n', '')) textHandler(el, text, instant)
   })
   document.querySelectorAll('[data-i18n-aria]').forEach((el) => el.setAttribute('aria-label', t(el.dataset.i18nAria)))
   document.querySelectorAll('[data-i18n-alt]').forEach((el) => (el.alt = t(el.dataset.i18nAlt)))

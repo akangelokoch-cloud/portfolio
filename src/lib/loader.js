@@ -1,4 +1,4 @@
-// Minimal % loader: fonts + hero portrait. Skipped entirely when everything is already cached.
+// Minimal % loader: hero portrait. Skipped entirely when everything is already cached.
 import { gsap } from 'gsap'
 
 export function runLoader() {
@@ -6,14 +6,9 @@ export function runLoader() {
   const num = el?.querySelector('[data-loader-num]')
   if (!el) return Promise.resolve()
 
-  const tasks = [
-    document.fonts.load('400 1em "Instrument Serif"'),
-    document.fonts.load('italic 400 1em "Instrument Serif"'),
-    document.fonts.load('500 1em "Inter Tight"'),
-    ...[...document.querySelectorAll('.hero__photo img')].map((img) =>
-      img.complete ? Promise.resolve() : img.decode().catch(() => {}),
-    ),
-  ]
+  const tasks = [...document.querySelectorAll('.hero__photo img')].map((img) =>
+    img.complete ? Promise.resolve() : img.decode().catch(() => {}),
+  )
   const total = tasks.length
   let done = 0
   const shown = { v: 0 }
