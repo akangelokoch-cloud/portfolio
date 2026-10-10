@@ -833,15 +833,6 @@ html:not(.js) .loader,
 .btn:hover .btn__arrow {
   transform: translateX(3px);
 }
-.contact__mail {
-  font-size: 0.9375rem;
-  color: var(--fg-dim);
-  text-decoration: none;
-  border-radius: 4px;
-}
-.contact__mail:hover {
-  color: var(--fg);
-}
 .social {
   list-style: none;
   display: flex;

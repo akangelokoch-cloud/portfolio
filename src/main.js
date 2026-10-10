@@ -2,7 +2,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from 'lenis'
 import { reducedMotion, mobileMQ, finePointer, isChromium, isSafari, useMobileVideo } from './lib/env.js'
-import { initI18n } from './lib/i18n.js'
+import { initI18n, t } from './lib/i18n.js'
 import { initReveal, playHero } from './lib/reveal.js'
 import { runLoader } from './lib/loader.js'
 import { initGlass } from './lib/glass.js'
@@ -37,6 +37,26 @@ document.addEventListener('click', (e) => {
   else if (target === 0) window.scrollTo(0, 0)
   else target.scrollIntoView()
   if (target !== 0) target.focus?.({ preventScroll: true })
+})
+
+// mailto does nothing without a mail app, so also copy the address and say so.
+const mailBtn = document.querySelector('[data-mail]')
+let mailTimer
+mailBtn?.addEventListener('click', () => {
+  const label = mailBtn.querySelector('[data-i18n="hireMe"]')
+  const status = mailBtn.querySelector('[data-mail-status]')
+  navigator.clipboard
+    ?.writeText(mailBtn.getAttribute('href').slice(7))
+    .then(() => {
+      label.textContent = t('mailCopied')
+      status.textContent = t('mailCopied')
+      clearTimeout(mailTimer)
+      mailTimer = setTimeout(() => {
+        label.textContent = t('hireMe')
+        status.textContent = ''
+      }, 2000)
+    })
+    .catch(() => {})
 })
 
 initI18n()
