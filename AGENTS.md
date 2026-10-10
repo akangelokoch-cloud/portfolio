@@ -12,7 +12,7 @@ SplitText), Lenis. No framework, no backend, no cookies, no trackers, no runtime
 4. `npm run build` must succeed. It fails on missing i18n keys.
 5. Commit with a short, descriptive message and `git push` to `main`.
 
-The owner deploys by building locally and uploading `dist/` by FTP. Never commit `dist/` or `node_modules/`.
+`dist/` is committed so it can be pulled and uploaded by FTP: run `npm run build` and commit `dist/` with every change. Never commit `node_modules/`.
 
 ## Where things live
 
