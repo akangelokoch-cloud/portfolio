@@ -31,8 +31,8 @@ slugify() {
 }
 trim() { sed -E 's/^[[:space:]]+|[[:space:]]+$//g' <<< "$1"; }
 
-# Re-encode when forced, missing, or older than the source.
-needs() { [ "$FORCE" = "1" ] || [ ! -s "$1" ] || [ "$SRC" -nt "$1" ]; }
+# Re-encode when forced, missing, or older than the source (never without a source).
+needs() { [ -f "$SRC" ] && { [ "$FORCE" = "1" ] || [ ! -s "$1" ] || [ "$SRC" -nt "$1" ]; }; }
 
 # Scale + centre-crop to exact 9:16 (handles non-vertical sources too).
 vf916() { echo "scale=$1:$2:force_original_aspect_ratio=increase,crop=$1:$2,setsar=1,format=yuv420p"; }
@@ -51,11 +51,18 @@ while IFS= read -r line <&3 || [ -n "$line" ]; do
   case "$f_cat" in atmospheric|product|passion) ;; *) echo "Bad category '$f_cat' for $f_src" >&2; exit 1;; esac
 
   SRC="$SRC_DIR/$f_src"
-  [ -f "$SRC" ] || { echo "Listed but missing: $SRC" >&2; exit 1; }
   listed+=("$f_src")
   slug="$(slugify "${f_src%.*}")"
   base="$OUT_DIR/$slug"
   echo "=== $f_src -> $slug ($f_cat)"
+
+  # Original not on this machine: keep the existing encodes if they are all there.
+  if [ ! -f "$SRC" ]; then
+    for ext in play.mp4 play.webm mobile.play.mp4 poster.webp mobile.poster.webp; do
+      [ -s "$base.$ext" ] || { echo "Listed but missing: $SRC (and no $slug.$ext)" >&2; exit 1; }
+    done
+    echo "  source not found, keeping existing files"
+  fi
 
   if needs "$base.play.mp4"; then
     echo "  play 1080x1920 mp4"
@@ -99,6 +106,6 @@ for f in "$SRC_DIR"/*; do
   printf '%s\n' "${listed[@]}" | grep -qxF "$n" || echo "--- skipped (not in clips.conf): $n"
 done
 
-printf '%s\n' "${entries[@]}" | jq -s 'sort_by(.order)' > "$OUT_DIR/manifest.json"
+printf '%s\n' "${entries[@]}" | jq -s 'sort_by(.order)' | tr -d '\r' > "$OUT_DIR/manifest.json"
 echo "=== manifest.json written ($(jq length "$OUT_DIR/manifest.json") clips)"
 ls -la "$OUT_DIR"

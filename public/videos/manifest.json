@@ -36,10 +36,28 @@
     }
   },
   {
+    "slug": "wassily",
+    "source": "wassily.mp4",
+    "category": "product",
+    "order": 3,
+    "duration": 10,
+    "title": {
+      "en": "Wassily Chair",
+      "de": "Wassily Chair"
+    },
+    "files": {
+      "play": "wassily.play.mp4",
+      "playWebm": "wassily.play.webm",
+      "mobilePlay": "wassily.mobile.play.mp4",
+      "poster": "wassily.poster.webp",
+      "mobilePoster": "wassily.mobile.poster.webp"
+    }
+  },
+  {
     "slug": "usm",
     "source": "usm.mp4",
     "category": "product",
-    "order": 3,
+    "order": 4,
     "duration": 10,
     "title": {
       "en": "USM Haller",
@@ -54,10 +72,28 @@
     }
   },
   {
+    "slug": "house-room",
+    "source": "house-room.mp4",
+    "category": "passion",
+    "order": 5,
+    "duration": 12.5,
+    "title": {
+      "en": "Dream Lounge",
+      "de": "Dream Lounge"
+    },
+    "files": {
+      "play": "house-room.play.mp4",
+      "playWebm": "house-room.play.webm",
+      "mobilePlay": "house-room.mobile.play.mp4",
+      "poster": "house-room.poster.webp",
+      "mobilePoster": "house-room.mobile.poster.webp"
+    }
+  },
+  {
     "slug": "panton",
     "source": "panton.mp4",
     "category": "passion",
-    "order": 4,
+    "order": 6,
     "duration": 10,
     "title": {
       "en": "Panton Pool",
