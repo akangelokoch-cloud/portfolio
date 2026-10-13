@@ -1053,7 +1053,7 @@ html.reduced [data-reveal] {
     height: 28px;
   }
 
-  /* Full-screen render (pinned by stages.js), text follows below it. */
+  /* Text first, then the full-screen render (pinned by stages.js). */
   .stage__media::after {
     content: '';
     position: absolute;
@@ -1063,7 +1063,9 @@ html.reduced [data-reveal] {
     pointer-events: none;
   }
   .stage__pin {
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
     height: auto;
     padding: 0;
   }
@@ -1075,7 +1077,7 @@ html.reduced [data-reveal] {
   .stage[data-side] .stage__text {
     position: relative;
     max-width: 30rem;
-    padding: 24px 14px 56px;
+    padding: 56px 14px 24px;
   }
   .stage__card {
     padding: 16px 18px 18px;

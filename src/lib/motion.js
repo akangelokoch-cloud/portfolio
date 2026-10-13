@@ -70,7 +70,12 @@ export function initSectionTransitions({ mobile }) {
     gsap.fromTo(target, from, {
       ...to,
       ease: 'none',
-      scrollTrigger: { trigger: stage, start: 'top bottom', end: 'top top', scrub: true },
+      scrollTrigger: {
+        trigger: mobile() ? stage.querySelector('.stage__media') : stage,
+        start: 'top bottom',
+        end: 'top top',
+        scrub: true,
+      },
     })
   })
 }

@@ -29,13 +29,16 @@ class Stage {
     this.inView = false
     this.totalVh = VH_PER_CLIP * this.clips.length + WIPE_VH * (this.clips.length - 1)
 
-    // Desktop pins the whole stage (text beside the phone); mobile pins only the render, text follows below.
+    // Desktop pins the whole stage (text beside the phone); mobile pins only the render, below the text.
+    const media = el.querySelector('.stage__media')
     gsap.matchMedia().add({ mobile: '(max-width: 767px)', desktop: '(min-width: 768px)' }, ({ conditions }) => {
       this.st = ScrollTrigger.create({
-        trigger: el,
+        trigger: conditions.mobile ? media : el,
         start: 'top top',
         end: () => `+=${(this.totalVh / 100) * window.innerHeight}`,
-        pin: conditions.mobile ? el.querySelector('.stage__media') : this.pin,
+        pin: conditions.mobile ? media : this.pin,
+        // GSAP turns this off by default when the pin's parent is flex (mobile).
+        pinSpacing: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
         onUpdate: (self) => this.update(self.progress),
