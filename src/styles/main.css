@@ -669,11 +669,11 @@ html:not(.js) .loader,
 .stage[data-side='right'] {
   --glow-x: 73%;
 }
+/* No perspective here: it would make this the caption's containing block. The tilt sets its own. */
 .stage__media {
   grid-row: 1;
   display: flex;
   justify-content: center;
-  perspective: 1400px;
 }
 .stage__text {
   grid-row: 1;
@@ -1053,38 +1053,31 @@ html.reduced [data-reveal] {
     height: 28px;
   }
 
+  /* Full-screen render (pinned by stages.js), text follows below it. */
   .stage__media::after {
     content: '';
     position: absolute;
-    inset: 45% 0 0;
+    inset: 70% 0 0;
     z-index: 2;
-    background: linear-gradient(to bottom, transparent, rgb(18 13 11 / 0.75));
+    background: linear-gradient(to bottom, transparent, rgb(18 13 11 / 0.6));
     pointer-events: none;
   }
   .stage__pin {
     display: block;
-    height: 100lvh;
+    height: auto;
     padding: 0;
   }
   .stage__media {
-    position: absolute;
-    inset: 0;
-    perspective: none;
+    position: relative;
+    height: 100lvh;
   }
   .stage__text,
   .stage[data-side] .stage__text {
-    position: absolute;
-    left: 14px;
-    right: 14px;
-    bottom: var(--bottom-safe);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    position: relative;
     max-width: 30rem;
+    padding: 24px 14px 56px;
   }
   .stage__card {
-    order: 2;
     padding: 16px 18px 18px;
     border-radius: 24px;
   }
@@ -1105,9 +1098,9 @@ html.reduced [data-reveal] {
   }
   .caption,
   .stage[data-side] .caption {
-    position: relative;
-    order: 1;
     inset: auto;
+    left: 14px;
+    bottom: var(--bottom-safe);
     padding: 9px 14px;
     border-radius: 999px;
   }

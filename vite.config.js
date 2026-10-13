@@ -59,6 +59,10 @@ function renderStages({ manifest, en }) {
               <span class="phone__island" aria-hidden="true"></span>
             </div>
           </div>
+          <p class="caption glass" data-glass>
+            <span class="caption__index" data-clip-index>01 / ${pad(clips.length)}</span>
+            <span class="caption__title" data-clip-title>${esc(clips[0].title.en)}</span>
+          </p>
         </div>
         <div class="stage__text">
           <div class="stage__card">
@@ -66,10 +70,6 @@ function renderStages({ manifest, en }) {
             <h2 id="${s.key}-title" class="stage__title" data-i18n="${s.key}Title" data-reveal>${esc(en[s.key + 'Title'])}</h2>
             <p class="stage__copy" data-i18n="${s.key}Text" data-reveal>${esc(en[s.key + 'Text']).replaceAll('\n', '<br>')}</p>
           </div>
-          <p class="caption glass" data-glass>
-            <span class="caption__index" data-clip-index>01 / ${pad(clips.length)}</span>
-            <span class="caption__title" data-clip-title>${esc(clips[0].title.en)}</span>
-          </p>
         </div>
       </div>
     </section>`

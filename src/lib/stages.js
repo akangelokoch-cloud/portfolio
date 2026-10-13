@@ -29,14 +29,17 @@ class Stage {
     this.inView = false
     this.totalVh = VH_PER_CLIP * this.clips.length + WIPE_VH * (this.clips.length - 1)
 
-    this.st = ScrollTrigger.create({
-      trigger: el,
-      start: 'top top',
-      end: () => `+=${(this.totalVh / 100) * window.innerHeight}`,
-      pin: this.pin,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-      onUpdate: (self) => this.update(self.progress),
+    // Desktop pins the whole stage (text beside the phone); mobile pins only the render, text follows below.
+    gsap.matchMedia().add({ mobile: '(max-width: 767px)', desktop: '(min-width: 768px)' }, ({ conditions }) => {
+      this.st = ScrollTrigger.create({
+        trigger: el,
+        start: 'top top',
+        end: () => `+=${(this.totalVh / 100) * window.innerHeight}`,
+        pin: conditions.mobile ? el.querySelector('.stage__media') : this.pin,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => this.update(self.progress),
+      })
     })
 
     // Lazy-load one section ahead: the first clip while the previous section is on screen,
