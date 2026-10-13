@@ -67,8 +67,8 @@ function renderStages({ manifest, en }) {
         <div class="stage__text">
           <div class="stage__card">
             <span class="stage__num" aria-hidden="true">${pad(n)}</span>
-            <h2 id="${s.key}-title" class="stage__title" data-i18n="${s.key}Title" data-reveal>${esc(en[s.key + 'Title'])}</h2>
-            <p class="stage__copy" data-i18n="${s.key}Text" data-reveal>${esc(en[s.key + 'Text']).replaceAll('\n', '<br>')}</p>
+            <h2 id="${s.key}-title" class="stage__title" data-i18n="${s.key}Title" data-reveal="scrub">${esc(en[s.key + 'Title'])}</h2>
+            <p class="stage__copy" data-i18n="${s.key}Text" data-reveal="scrub">${esc(en[s.key + 'Text']).replaceAll('\n', '<br>')}</p>
           </div>
         </div>
       </div>
